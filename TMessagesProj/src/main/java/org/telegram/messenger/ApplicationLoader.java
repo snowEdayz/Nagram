@@ -290,6 +290,7 @@ public class ApplicationLoader extends Application {
         for (Runnable runnable : postRun) {
             Utilities.stageQueue.postRunnable(runnable);
         }
+        ProxyRotationController.checkCurrentConnectionState();
         // init fcm
         initPushServices();
         if (BuildVars.LOGS_ENABLED) {
